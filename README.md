@@ -6,7 +6,7 @@ Created wireframe yesterday for the frontend UI. Will be implementing this now<b
 
 
 -<i>CURD interface for work tickets</i> - <b>COMPLETE</b><br />
--Create RESTful API <b>Current Stage</b>
+-Create RESTful API <b>Current Stage</b><br />
 -Additional CURD abilities to upload image files within a gallery to work tickets (.jpeg, .gif, .png) <b>Creating in seperate repo then integrating</b><br />
 -Time tracking and time stamping of work <b> Using most digital clock code from other repo</b><br />
 -User encrypted logins<br />
