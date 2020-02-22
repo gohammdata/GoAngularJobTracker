@@ -9,9 +9,9 @@ import (
     )
 
 type Employee struct {
-    Id int
-    Name string
-    City string
+    Id int 'json:"id,omitempty"'
+    Name string 'json:"name,omitempty'
+    City string 'json:city, omitempty'
 }
 
 func dbConn() (db *sql.DB) {
