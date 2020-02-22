@@ -15,4 +15,4 @@ Created wireframe yesterday for the frontend UI. Will be implementing this now<b
 -Admin login/Admin mapping<br />
 -Admin scoring of work tickets via form submission<br />
 -Back-end [Go, MySQL]<br />
--Front-end [HTML5, CSS3, Bootstrap, VanillaJS]<br />
+-Front-end [HTML5, CSS3, Bootstrap, Angular 2]<br />
