@@ -6,6 +6,11 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 
+const appRoutes: Routes = [
+    { path: 'main', component: Main }
+
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +19,11 @@ import { MainComponent } from './main/main.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(
+    appRoutes,
+    { enableTracing: true} // <-- Debugging purposes
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
