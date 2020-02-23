@@ -1,3 +1,3 @@
-module github.com/gohammdata/GoAngularJobTracker/api
+module github.com/gohammdata/GoAngularJobTracker/BackEnd
 
 go 1.12
