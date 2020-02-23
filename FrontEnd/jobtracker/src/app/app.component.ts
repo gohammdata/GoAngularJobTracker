@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { map } from 'rxjs/operators';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'my-app',
@@ -10,26 +11,13 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
-  public posts: any;
-  
-  public constructor(private http: Http, private router: Router, private location: Location) {
-    this.posts = [];
-  }
-  public ngOnInit() {
-    this.location.subscribe(() => {
-        this.refresh();
-    });
-    this.refresh();
-  }
-  
-  private refresh() {
-  this.http.get("http://localhost:8080/posts").pipe(map((res: Response)=> res.json()))
-    .subscribe(result => {
-        this.posts = result;
+posts;
+constructor(private apiService: ApiService){ }
+ngOnInit(){
+    this.apiService.getPosts().subscribe((data)=>{
+    console.log(data);
+    this.posts = data['posts'];
     })
-  }
-  public create() {
-    this.router.navigate(["create"]);
-  }
 }
+}
+
