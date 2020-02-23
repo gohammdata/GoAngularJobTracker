@@ -30,3 +30,11 @@ func Hash(password string) ([]byte, error) {
 func VerifyPassword(hashedPassword, password string) error {
 	return bcrypt.CompareHashAndPassword([]byte(hashedPassword), []byte(password))
 }
+
+func (u *User) Prepare() {
+    u.ID = 0
+    u.Nickname = html.EscapeString(strings.TrimSpace(u.Nickname))
+    u.Email = html.EscapeString(strings.TrimSpace(u.Email))
+    u.CreatedAt = time.Now()
+    u.UpdatedAt = time.Now()
+}
