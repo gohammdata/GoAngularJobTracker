@@ -11,7 +11,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"    //mysql database driver
 	_ "github.com/jinzhu/gorm/dialects/postgres" //postgres database driver
 
-	"github.com/gohammdata/GoAngularJobTracker/api/models"
+	"github.com/gohammdata/GoAngularJobTracker/BackEnd/api/models"
 )
 
 type Server struct {
