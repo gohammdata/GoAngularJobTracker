@@ -38,3 +38,49 @@ func (u *User) Prepare() {
     u.CreatedAt = time.Now()
     u.UpdatedAt = time.Now()
 }
+
+func (u *User) Validate(action string) error {
+    switch strings.ToLower(action) {
+        case "update"
+        if u.Nickname == "" {
+            return errors.New("Required Nickname")
+        }
+        if u.Password == "" {
+            return errors.New("Required Password")
+        }
+        
+        if u.Email == "" {
+            return errors.New("Required Email")
+        }
+        if err := checkmail.ValidateFormat(u.Email); err !=nil {
+            return errors.New("Invalid Email")
+        }
+        
+        return nil
+    case "login":
+        if u.Password == "" {
+            return errors.New("Required Password")
+        }
+        if u.Email == "" {
+			return errors.New("Required Email")
+		}
+        if err := checkmail.ValidateFormat(u.Email); err != nil {
+			return errors.New("Invalid Email")
+		}
+		return nil
+    default:
+		if u.Nickname == "" {
+			return errors.New("Required Nickname")
+		}
+		if u.Password == "" {
+			return errors.New("Required Password")
+		}
+		if u.Email == "" {
+			return errors.New("Required Email")
+		}
+		if err := checkmail.ValidateFormat(u.Email); err != nil {
+			return errors.New("Invalid Email")
+		}
+		return nil
+    }
+}
